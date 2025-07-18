@@ -4,364 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="mid/favicon.ico" type="image/x-icon">
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="https://unpkg.com/lenis@1.3.7/dist/lenis.min.js"></script> 
-  <style>
-    @font-face {
-      font-family: 'CustomFont';
-      src: url('fonts/Quicksand-VariableFont_wght.ttf');
-    }
-
-    body {
-      font-family: 'CustomFont'; /* Use the custom font */
-      margin: 0;
-      padding: 0;
-      
-    }
-    .logo {
-      width: 200px; /* Adjust the size as needed */
-      height: auto;
-      position: relative;
-      left: 40px;
-      transition: 0.2s;
-    }
-
-    .logo:hover {
-      transform: scale(1.1); /* Slightly enlarge the logo on hover */
-      transition: transform 0.3s ease; /* Smooth transition effect */
-    }
-    
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('mid/wallpaper-vsc.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      z-index: -1; /* Ensure the background is behind the logo */
-      filter: blur(3px); /* Adjust the blur effect as needed */
-    }
-
-    .eye-open{
-      width: 40px;
-      display: none; /* Initially hidden */
-    }
-
-    .more {
-      position: absolute;
-      top: 65px;
-      right: 20px;
-      display: flex;
-      gap: 45px; /* Space between links */
-    }
-
-    .more a {
-      text-decoration: none;
-      color: white; /* Change link color for better visibility */
-      font-size: 22px; /* Adjust font size as needed */
-      transition: color 0.3s ease;
-      transition: 0.2s;
-    }
-
-    .more a:hover {
-      color: #ffcc00; /* Change color on hover */
-      transform: scale(1.1); /* Slightly enlarge on hover */
-      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
-      font-weight: bold; /* Make the text bold on hover */
-    }
-
-    h1.phrase-effect {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 60px;
-      text-align: center;
-      line-height: 1.2;
-      color: white;
-      z-index: 1; /* Ensure the text is above the background */
-      letter-spacing: 4px ; /* Adjust letter spacing as needed */
-    }
-
-    .letter {
-      display: inline-block;
-      opacity: 0;
-    }
-
-    .letter:hover
-    {
-      color: #ffcc00; /* Change text color on hover */
-      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
-      transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge on hover */
-      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
-    }
-
-    .badge {
-      display: inline-flex;
-      text-align: left;
-      color: white;
-      border-radius: 999px;
-      background-color: #2A3B4C;
-      padding: 25px 120px;
-      background-color: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      font-family: sans-serif;
-      font-size: 22px;
-      position: absolute;
-      left: -5%;
-      top: 43%;
-      letter-spacing: 1px;
-      transition: 0.2s;
-    }
-
-    .badge:hover {
-      color: #ffcc00; /* Change text color on hover */
-      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
-      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
-    }
-
-    .globe-icon {
-      position: absolute;
-      top: 50%;
-      left: 10.5%;
-      transform: translate(-50%, -50%);
-      width: 70px; /* Adjust the size as needed */
-      height: auto;
-      fill: white; /* Change icon color for better visibility */
-    }
-
-    .section-2 {
-      padding: 50px;
-      color: white; /* Text color */
-      text-align: center;
-      margin-top: 30%;
-    }
-
-    .content-box {
-      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
-      padding: 20px;
-      border-radius: 10px;
-      width: 20%;
-      height: 1000px;
-      justify-self: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      letter-spacing: 4px;
-      font-size: 18px;
-    }
-    .content-box2 {
-      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
-      padding: 20px;
-      border-radius: 10px;
-      width: 20%;
-      height: 1000px;
-      justify-self: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      letter-spacing: 4px;
-      font-size: 18px;
-      margin-left: 50%;
-      margin-top: -55%;
-    }
-    .content-box3 {
-      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
-      padding: 20px;
-      border-radius: 10px;
-      width: 20%;
-      height: 1000px;
-      justify-self: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      letter-spacing: 4px;
-      font-size: 18px;
-      margin-left: -50%;
-      margin-top: -57.5%;
-    }
-
-    .cursor-dot {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 50px;
-      height: 50px;
-      border: 2px solid #ffcc00; /* só o contorno amarelo */
-      background-color: transparent; /* sem preenchimento */
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease-out;
-      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5); /* glow leve opcional */
-}
-
-
-    /*media queries for responsiveness*/
-    @media screen and (max-width: 1280px) {
-  .more {
-    gap: 25px;
-    top: 50px;
-    right: 10px;
-  }
-
-  h1.phrase-effect {
-    font-size: 44px;
-  }
-
-  .badge {
-    padding: 15px 50px;
-    font-size: 18px;
-    position: relative;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 40px;
-    text-align: center;
-  }
-
-  .globe-icon {
-    position: relative;
-    top: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 55px;
-    margin-top: 20px;
-    display: none;
-  }
-
-  .section-2 {
-    margin-top: 40%;
-  }
-
-  .content-box, .content-box2, .content-box3 {
-    width: 60%;
-    height: auto;
-    margin: 30px auto;
-  }
-
-  .content-box2, .content-box3 {
-    margin-left: auto;
-    margin-top: 0;
-  }
-
-  .cursor-dot{
-    display: none; /* Oculta o cursor personalizado em telas maiores */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .logo {
-    width: 150px;
-    left: 20px;
-  }
-
-  .more {
-    flex-direction: column;
-    align-items: flex-end;
-    top: 40px;
-    right: 10px;
-    gap: 15px;
-  }
-
-  h1.phrase-effect {
-    font-size: 32px;
-    line-height: 1.4;
-  }
-
-  .badge {
-    font-size: 14px;
-    padding: 12px 24px;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    transform: none;
-    margin: 0;
-    z-index: 10;
-    text-align: left;
-    max-width: 80%;
-  }
-
-  .globe-icon {
-    position: relative;
-    top: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    margin-top: 15px;
-  }
-
-  .section-2 {
-    padding: 20px;
-    margin-top: 60%;
-  }
-
-  .content-box, .content-box2, .content-box3 {
-    width: 90%;
-    font-size: 16px;
-    letter-spacing: 1px;
-    height: auto;
-    margin: 20px auto;
-
-    .cursor-dot{
-      display: none;
-    }
-  }
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .logo {
-    width: 180px;
-    left: 30px;
-  }
-
-  .more {
-    top: 55px;
-    right: 15px;
-    gap: 30px;
-  }
-
-  h1.phrase-effect {
-    font-size: 46px;
-  }
-
-  .badge {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    padding: 18px 40px;
-    max-width: 70%;
-    text-align: left;
-  }
-
-  .globe-icon {
-    display: none; /* também ocultamos o ícone em tablet, como no celular */
-  }
-
-  .section-2 {
-    margin-top: 45%;
-    padding: 30px;
-  }
-
-  .content-box,
-  .content-box2,
-  .content-box3 {
-    width: 80%;
-    font-size: 17px;
-    height: auto;
-    margin: 20px auto;
-    letter-spacing: 2px;
-  }
-}
-
-    .cursor-dot{
-      display: none;
-    }
-
-}
-
-  </style>
   <title>Artur Portfolio</title>
 </head>
 <body>
@@ -437,14 +84,12 @@
   </div>
   <div class="cursor-dot"></div>
 
-  //letter animation
   <script>
     anime({
       
     })
   </script>
 
-  //links animation
   <script>
     anime({
       targets: '.letter',
@@ -459,7 +104,7 @@
     })
   </script>
 
-  //scroll animation
+
   <script>
 // Initialize Lenis
 const lenis = new Lenis();
@@ -473,7 +118,6 @@ function raf(time) {
 requestAnimationFrame(raf);
   </script>
 
-  //cursor dot
   <script>
   const cursorDot = document.querySelector('.cursor-dot');
 
@@ -482,6 +126,5 @@ requestAnimationFrame(raf);
     cursorDot.style.left = `${e.clientX}px`;
   });
 </script>
-
 </body>
 </html>

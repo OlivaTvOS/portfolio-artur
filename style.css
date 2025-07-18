@@ -1,0 +1,815 @@
+   @font-face {
+      font-family: 'CustomFont';
+      src: url('fonts/Quicksand-VariableFont_wght.ttf');
+    }
+
+    body {
+      font-family: 'CustomFont'; /* Use the custom font */
+      margin: 0;
+      padding: 0;
+    }
+      .logo {
+      width: 200px; /* Adjust the size as needed */
+      height: auto;
+      position: relative;
+      left: 40px;
+      transition: 0.2s;
+    }
+
+    .logo:hover {
+      transform: scale(1.1); /* Slightly enlarge the logo on hover */
+      transition: transform 0.3s ease; /* Smooth transition effect */
+    }
+    
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('mid/wallpaper-vsc.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: -1; /* Ensure the background is behind the logo */
+      filter: blur(3px); /* Adjust the blur effect as needed */
+    }
+
+    .eye-open{
+      width: 40px;
+      display: none; /* Initially hidden */
+    }
+
+    .more {
+      position: absolute;
+      top: 65px;
+      right: 20px;
+      display: flex;
+      gap: 45px; /* Space between links */
+      left: 90%;
+    }
+
+    .more a {
+      text-decoration: none;
+      color: white; /* Change link color for better visibility */
+      font-size: 22px; /* Adjust font size as needed */
+      transition: color 0.3s ease;
+      transition: 0.2s;
+    }
+
+    .more a:hover {
+      color: #ffcc00; /* Change color on hover */
+      transform: scale(1.1); /* Slightly enlarge on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      font-weight: bold; /* Make the text bold on hover */
+    }
+
+    h1.phrase-effect {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+      text-align: center;
+      line-height: 1.2;
+      color: white;
+      z-index: 1; /* Ensure the text is above the background */
+      letter-spacing: 4px ; /* Adjust letter spacing as needed */
+    }
+
+    .letter {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    .letter:hover
+    {
+      color: #ffcc00; /* Change text color on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge on hover */
+      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .badge {
+      display: inline-flex;
+      text-align: left;
+      color: white;
+      border-radius: 999px;
+      background-color: #2A3B4C;
+      padding: 25px 120px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      font-size: 22px;
+      position: absolute;
+      left: -5%;
+      top: 43%;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .badge:hover {
+      color: #ffcc00; /* Change text color on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .globe-icon {
+      position: absolute;
+      left: 13%;
+      top: 50.5%;
+      transform: translate(-50%, -50%);
+      width: 70px; /* Adjust the size as needed */
+      height: auto;
+      fill: white; /* Change icon color for better visibility */
+    }
+
+    .section-2 {
+      padding: 50px;
+      color: white; /* Text color */
+      text-align: center;
+      margin-top: 30%;
+    }
+
+    .content-box {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 17px;
+      margin-top: 2%;
+    }
+    .content-box2 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 17px;
+      position: absolute;
+      left: 63%;
+      top: 90%;
+    }
+    .content-box3 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 17px;
+      position: absolute;
+      left: 14.5%;
+      top: 90%;
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #ffcc00; /* só o contorno amarelo */
+      background-color: transparent; /* sem preenchimento */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5); /* glow leve opcional */
+  }
+
+@media screen and (max-width: 1360px) {
+    .eye-open{
+      width: 40px;
+      display: none; /* Initially hidden */
+    }
+
+    .badge {
+      display: inline-flex;
+      text-align: left;
+      color: white;
+      border-radius: 999px;
+      background-color: #2A3B4C;
+      padding: 25px 120px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      font-size: 22px;
+      position: absolute;
+      left: -5%;
+      top: 43%;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .badge:hover {
+      color: #ffcc00; /* Change text color on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .globe-icon {
+      position: absolute;
+      left: 18%;
+      top: 53.5%;
+      transform: translate(-50%, -50%);
+      width: 70px; /* Adjust the size as needed */
+      height: auto;
+      fill: white; /* Change icon color for better visibility */
+    }
+
+    .section-2 {
+      padding: 50px;
+      color: white; /* Text color */
+      text-align: center;
+      margin-top: 30%;
+    }
+
+    .content-box {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 15px;
+      margin-top: -12%;
+    }
+    .content-box2 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 15px;
+      position: absolute;
+      left: 63%;
+      top: 86%;
+    }
+    .content-box3 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 15px;
+      position: absolute;
+      left: 14.5%;
+      top: 86%;
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #ffcc00; /* só o contorno amarelo */
+      background-color: transparent; /* sem preenchimento */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5); /* glow leve opcional */
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    .eye-open{
+      width: 40px;
+      display: none; /* Initially hidden */
+    }
+
+    .badge {
+      display: inline-flex;
+      text-align: left;
+      color: white;
+      border-radius: 999px;
+      background-color: #2A3B4C;
+      padding: 25px 120px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      font-size: 22px;
+      position: absolute;
+      left: -5%;
+      top: 43%;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .badge:hover {
+      color: #ffcc00; /* Change text color on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .globe-icon {
+      position: absolute;
+      left: 14%;
+      top: 49.5%;
+      transform: translate(-50%, -50%);
+      width: 70px; /* Adjust the size as needed */
+      height: auto;
+      fill: white; /* Change icon color for better visibility */
+    }
+
+    .section-2 {
+      padding: 50px;
+      color: white; /* Text color */
+      text-align: center;
+      margin-top: 30%;
+    }
+
+    .content-box {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 15px;
+      margin-top: 15%;
+    }
+    .content-box2 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 15px;
+      position: absolute;
+      left: 63%;
+      top: 92%;
+    }
+    .content-box3 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 15px;
+      position: absolute;
+      left: 14.5%;
+      top: 92%;
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #ffcc00; /* só o contorno amarelo */
+      background-color: transparent; /* sem preenchimento */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5); /* glow leve opcional */
+    }
+  }
+
+
+  @media screen and (max-width: 2560px) {
+    body {
+      font-family: 'CustomFont'; /* Use the custom font */
+      margin: 0;
+      padding: 0;
+    }
+      .logo {
+      width: 200px; /* Adjust the size as needed */
+      height: auto;
+      position: relative;
+      left: 40px;
+      transition: 0.2s;
+    }
+
+    .logo:hover {
+      transform: scale(1.1); /* Slightly enlarge the logo on hover */
+      transition: transform 0.3s ease; /* Smooth transition effect */
+    }
+    
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('mid/wallpaper-vsc.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: -1; /* Ensure the background is behind the logo */
+      filter: blur(3px); /* Adjust the blur effect as needed */
+    }
+
+    .eye-open{
+      width: 40px;
+      display: none; /* Initially hidden */
+    }
+
+    .more {
+      position: absolute;
+      top: 65px;
+      right: 20px;
+      display: flex;
+      gap: 45px; /* Space between links */
+      left: 90%;
+    }
+
+    .more a {
+      text-decoration: none;
+      color: white; /* Change link color for better visibility */
+      font-size: 22px; /* Adjust font size as needed */
+      transition: color 0.3s ease;
+      transition: 0.2s;
+    }
+
+    .more a:hover {
+      color: #ffcc00; /* Change color on hover */
+      transform: scale(1.1); /* Slightly enlarge on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      font-weight: bold; /* Make the text bold on hover */
+    }
+
+    h1.phrase-effect {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+      text-align: center;
+      line-height: 1.2;
+      color: white;
+      z-index: 1; /* Ensure the text is above the background */
+      letter-spacing: 4px ; /* Adjust letter spacing as needed */
+    }
+
+    .letter {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    .letter:hover
+    {
+      color: #ffcc00; /* Change text color on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge on hover */
+      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .badge {
+      display: inline-flex;
+      text-align: left;
+      color: white;
+      border-radius: 999px;
+      background-color: #2A3B4C;
+      padding: 25px 120px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      font-size: 22px;
+      position: absolute;
+      left: -5%;
+      top: 43%;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .badge:hover {
+      color: #ffcc00; /* Change text color on hover */
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Add glow effect on hover */
+      transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .globe-icon {
+      position: absolute;
+      left: 13%;
+      top: 50.5%;
+      transform: translate(-50%, -50%);
+      width: 70px; /* Adjust the size as needed */
+      height: auto;
+      fill: white; /* Change icon color for better visibility */
+    }
+
+    .section-2 {
+      padding: 50px;
+      color: white; /* Text color */
+      text-align: center;
+      margin-top: 30%;
+    }
+
+    .content-box {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 17px;
+      margin-top: 2%;
+    }
+    .content-box2 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 17px;
+      position: absolute;
+      left: 63%;
+      top: 90%;
+    }
+    .content-box3 {
+      background-color: rgba(42, 59, 76, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      width: 20%;
+      height: 1000px;
+      justify-self: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      letter-spacing: 4px;
+      font-size: 17px;
+      position: absolute;
+      left: 14.5%;
+      top: 90%;
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #ffcc00; /* só o contorno amarelo */
+      background-color: transparent; /* sem preenchimento */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5); /* glow leve opcional */
+  }
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .logo {
+        width: 110px;
+        left: 8px;
+        top: 8px;
+        position: relative;
+    }
+
+    .background {
+        background-position: center;
+        background-size: cover;
+        filter: blur(2px);
+    }
+
+    .more {
+        position: static;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 14px;
+        margin: 18px 6px 0 0;
+        left: auto;
+        top: auto;
+        margin-top: -18%;
+        right: 0;
+    }
+
+    .more a {
+        font-size: 17px;
+        padding: 7px 0;
+    }
+
+    h1.phrase-effect {
+        font-size: 22px;
+        top: 16%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 0 4vw;
+        letter-spacing: 1.2px;
+        word-break: break-word;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 8px 10vw;
+        left: 50%;
+        top: 260%;
+        transform: translateX(-50%);
+        position: absolute;
+        min-width: 40px;
+        max-width: 92vw;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .globe-icon {
+        display: none; /* Hide globe icon on smaller screens */
+    }
+
+    .section-2 {
+        padding: 12px 2vw;
+        margin-top: 55%;
+        font-size: 13px;
+    }
+
+    .content-box,
+    .content-box2,
+    .content-box3 {
+        width: 96vw;
+        min-width: 0;
+        max-width: 80vw;
+        height: auto;
+        font-size: 12px;
+        margin: 12px auto 0 auto;
+        position: static;
+        border-radius: 7px;
+        padding: 10px 4vw;
+        box-sizing: border-box;
+        word-break: break-word;
+    }
+
+    .cursor-dot {
+        display: none;
+    }
+
+    .letter {
+        font-size: 15px;
+    }
+}
+
+/* iPhone-specific tweaks (e.g. iPhone 12/13/14 Pro Max, 430px) */
+@media screen and (max-width: 430px) {
+    h1.phrase-effect {
+        font-size: 16px;
+        padding: 0 2vw;
+    }
+    .badge {
+        font-size: 10px;
+        padding: 6px 4vw;
+        top: 228%;
+    }
+    .logo {
+        width: 80px;
+    }
+    .content-box,
+    .content-box2,
+    .content-box3 {
+        font-size: 10px;
+        padding: 6px 2vw;
+    }
+    .more a {
+        font-size: 14px;
+    }
+}
+
+
+  @media screen and (min-width: 1920px) {
+    .eye-open {
+        width: 40px;
+        display: none; /* Initially hidden */
+    }
+
+    .badge {
+        display: inline-flex;
+        text-align: left;
+        color: white;
+        border-radius: 999px;
+        background-color: #2A3B4C;
+        padding: 25px 120px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        font-family: sans-serif;
+        font-size: 22px;
+        position: absolute;
+        left: -5%;
+        top: 43%;
+        letter-spacing: 1px;
+        transition: 0.2s;
+    }
+
+    .badge:hover {
+        color: #ffcc00;
+        text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .globe-icon {
+        position: absolute;
+        left: 11%;
+        top: 50.5%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: auto;
+        fill: white;
+    }
+
+    .section-2 {
+        padding: 50px;
+        color: white;
+        text-align: center;
+        margin-top: 30%;
+    }
+
+    .content-box {
+        background-color: rgba(42, 59, 76, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: 20%;
+        height: 1000px;
+        justify-self: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        letter-spacing: 4px;
+        font-size: 18px;
+        margin-top: -1%;
+    }
+    .content-box2 {
+        background-color: rgba(42, 59, 76, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: 20%;
+        height: 1000px;
+        justify-self: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        letter-spacing: 4px;
+        font-size: 18px;
+        position: absolute;
+        left: 63%;
+        top: 90%;
+    }
+    .content-box3 {
+        background-color: rgba(42, 59, 76, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: 20%;
+        height: 1000px;
+        justify-self: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        letter-spacing: 4px;
+        font-size: 18px;
+        position: absolute;
+        left: 14.5%;
+        top: 90%;
+    }
+
+    .cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #ffcc00;
+        background-color: transparent;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease-out;
+        box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+    }
+  }
